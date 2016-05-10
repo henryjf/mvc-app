@@ -39,6 +39,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "jquery": "^2.2.3"
+    "bulma": "0.0.26",
+    "jquery": "^2.2.3",
+    "lodash": "^4.12.0"
   }
 }

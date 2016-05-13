@@ -1,10 +1,32 @@
-import{ Contact } from '../models/contact';
+import{ List } from '../models/list';
 export class AppController {
 
-  constructor(name, phone, location) {
-    this.name = name;
-    this.phone = phone;
-    this.location = location;
-
+  constructor(contactForm, instance) {
+    this.contactForm = contactForm;
+    this.listInstance = instance;
   }
+
+  init() {
+    this.contactForm.on('submit', (event) => {
+      event.preventDefault();
+
+      let input = this.contactForm.find('input');
+      this.addPersonToContacts(input.val());
+      input.val('');
+
+
+    });
+  };
+
+  addPersonToContacts(contactInfo) {
+    let l = new List(info);
+    this.listInstance.contactInfo.push(l);
+    this.addListToView(l);
+  }
+
+
+
+
+
+
 }

@@ -13,7 +13,6 @@ export class List {
   constructor(form) {
     this.form = form;
     this.complete = false;
-    this.id = id;
+    // this.id = id;
   }
 }
- 

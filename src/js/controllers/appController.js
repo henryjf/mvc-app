@@ -1,32 +1,36 @@
 import{ List } from '../models/list';
 export class AppController {
 
-  constructor(contactForm, instance) {
-    this.contactForm = contactForm;
-    this.listInstance = instance;
+  constructor(form, listElem, instance) {
+    this.form = form;
+    this.listArea = listElem;
+    this.contactInstance = instance;
   }
 
   init() {
     this.contactForm.on('submit', (event) => {
       event.preventDefault();
 
-      let input = this.contactForm.find('input');
+      let input = this.form.find('input');
       this.addPersonToContacts(input.val());
       input.val('');
-
-
     });
   };
 
-  addPersonToContacts(contactInfo) {
-    let l = new List(info);
-    this.listInstance.contactInfo.push(l);
+  addPersonToContacts(listForm) {
+    let l = new List(listForm);
+    this.contactInstance.contactInfo.push(l);
     this.addListToView(l);
-  }
+  };
 
+  addListToView(listObj) {
+    let listHTML = this.listTemplate(listObj.info);
+    this.listArea.prepend(listHTML);
+  };
 
-
-
-
+listTemplate(listForm) {
+  return `<input class=$'{info.name}'>;
+  `
+};
 
 }

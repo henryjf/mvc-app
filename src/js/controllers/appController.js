@@ -23,18 +23,20 @@ formSubmit() {
 
     // console.log(this);
 
+//setting variables which will get the value from the form of each property selected
     let firstName = form.find('firstName').val();
     let lastName  = form.find('.lastNameInput').val();
     let location  = form.find('.locationInput').val();
     let phone     = form.find('.phoneInput').val();
     let photo     = form.find('.photoInput').val();
 
-    let newContact = new Contact (firstName, lastName, location, phone, photo);
+    // let addContact = new Contact (firstName, lastName, location, phone, photo);
 
 // console.log(newContact);
       // this.appendTemplate(contactForm);
       let input = this.contactForm.find('.input')
       input.val('');
+      // console.log(input);
   });
 
 }
@@ -47,8 +49,12 @@ contactTemplate(contactObj) {
   return`
     <input class="${contactObj.firstNameInput}">
     <input class="${contactObj.lastNameInput}">
+    <input class="${contactObj.locationInput}">
+    <input class="${contactObj.phoneInput}">
+    <input class="${contactObj.photoInput}">
 
 
   `;
+
 }
 }

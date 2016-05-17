@@ -1,11 +1,6 @@
 # Project Description
 
-This is a basic template for starting projects.
-
+This project emphasizes building an app form to store contacts' pertinents.
 ## Deployment
 
-To deploy your project just run:
-
-- Make sure you have a lowercase folder name
-- `npm run deploy`
-- You should have a 'surge.sh' link now for your project
+tiy-maryhenry-mvc-app.surge.sh

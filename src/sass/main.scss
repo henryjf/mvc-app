@@ -3,7 +3,6 @@
 .container {
   width: 400px;
   margin: 25px auto;
-  border: 1px solid black;
   padding: 10px;
 
   .newcontact {
@@ -12,6 +11,29 @@
     padding-bottom: 5px;
     font-weight: bold;
   }
+  .input {
+    margin-bottom: 10px;
+  }
+  .button {
+    font-size: 16px;
+    color: white;
+    background-color: #E67E22;
+    width: 75px;
+    padding-left: 10px;
+  }
 }
+
+
+  .contactCard {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+
+
+    li {
+      list-style-type: none;
+    }
+
+  }
 
 }

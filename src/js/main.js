@@ -7,7 +7,6 @@ import { AppController } from './controllers/appController';
 let contactForm = $('.newcontact');
 let contactList = $('.contactList');
 
-// console.log(contactForm);
 
 let app = new AppController(contactForm, contactList);
 

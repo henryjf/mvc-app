@@ -15,8 +15,6 @@ formSubmit() {
   this.contactForm.on('submit', (event) => {
     event.preventDefault();
 
-
-
     //make sure i register the submit
     // console.log('form submitted');
 
@@ -39,22 +37,17 @@ formSubmit() {
       input.val('');
   });
 
-  // appendTemplate(contactObj) {
-  //   `
-  //   <p>${contactObj.firstName}</p>
-  //   `;
-  // }
 }
-addContactToView(contactObj) {
+  addContactToView(contactObj) {
   let contactHTML = this.contactTemplate(contactObj)
   this.contactList.append(contactHTML);
-};
-
-
+  };
 
 contactTemplate(contactObj) {
   return`
-    <input id="${contactObj.fistName}">
+    <input class="${contactObj.firstNameInput}">
+    <input class="${contactObj.lastNameInput}">
+
 
   `;
 }

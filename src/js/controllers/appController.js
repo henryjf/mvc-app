@@ -41,13 +41,14 @@ formSubmit() {
 }
 
     deleteButton() {
-      console.log("Clicks ", $('.deleteBtn'));
+      // console.log("Clicks ", $('.deleteBtn'));
 
     $('.deleteBtn').click(function() {
+      // isolate the exact button that was clicked
       let button = $(this);
-      console.log(button);
-      let toDelete = button.find('contactCard');
-      console.log(toDelete);
+      //use .parent to locate contactcard descendent called button
+      let toDelete = button.parent('.contactCard');
+      //removes toDelete
       toDelete.remove();
     });
   }
@@ -56,11 +57,11 @@ formSubmit() {
 makeTemplate(contact) {
   return`
   <div class ="contactCard">
-  <li>${contact.firstName} ${contact.lastName}</li>
-  <li>${contact.location}</li>
-  <li>${contact.phone}</li>
-  <img src="${contact.photoURL}">
-  <button class="deleteBtn">Delete</button>
+    <li>${contact.firstName} ${contact.lastName}</li>
+    <li>${contact.location}</li>
+    <li>${contact.phone}</li>
+    <img src="${contact.photoURL}">
+    <button class="deleteBtn">Delete</button>
   </div>
 
   `;

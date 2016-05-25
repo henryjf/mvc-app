@@ -26,7 +26,7 @@ formSubmit() {
     let lastName  = form.find('.lastNameInput').val();
     let location  = form.find('.locationInput').val();
     let phone     = form.find('.phoneInput').val();
-    let photoURL     = form.find('.photoInput').val();
+    let photoURL  = form.find('.photoInput').val();
 
 
       // this.appendTemplate(contactForm);

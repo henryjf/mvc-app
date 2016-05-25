@@ -1,5 +1,7 @@
 import { Contact } from '../models/contact';
 
+import $ from 'jquery';
+
 export class AppController {
 
   constructor(contactForm, contactList) {
@@ -9,6 +11,7 @@ export class AppController {
 
   init() {
     this.formSubmit();
+    this.deleteButton();
   }
 
 formSubmit() {
@@ -22,19 +25,32 @@ formSubmit() {
     let lastName  = form.find('.lastNameInput').val();
     let location  = form.find('.locationInput').val();
     let phone     = form.find('.phoneInput').val();
-    let photo     = form.find('.photoInput').val();
+    let photoURL     = form.find('.photoInput').val();
 
     //instantiating a new contact
-    let contact = new Contact (firstName, lastName, location, phone, photo);
+    let contact = new Contact (firstName, lastName, location, phone, photoURL);
     //assigning template to the contactHTML
     let contactHTML = this.makeTemplate(contact);
     //appending the template info on to the page
     this.contactList.append(contactHTML);
 
+    this.deleteButton();
     //reset form
     form.find('.input').val('');
   });
 }
+
+    deleteButton() {
+      console.log("Clicks ", $('.deleteBtn'));
+
+    $('.deleteBtn').click(function() {
+      let button = $(this);
+      console.log(button);
+      let toDelete = button.find('contactCard');
+      console.log(toDelete);
+      toDelete.remove();
+    });
+  }
 
 //Passes info entered on the page to html form
 makeTemplate(contact) {
@@ -43,7 +59,9 @@ makeTemplate(contact) {
   <li>${contact.firstName} ${contact.lastName}</li>
   <li>${contact.location}</li>
   <li>${contact.phone}</li>
-  <li>${contact.photo}</li>
+  <img src="${contact.photoURL}">
+  <button class="deleteBtn">Delete</button>
+  </div>
 
   `;
 }
